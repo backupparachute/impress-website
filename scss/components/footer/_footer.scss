@@ -1,0 +1,121 @@
+@import 'footer-variables';
+
+.site-footer {
+  position: relative;
+  background-color: #c61831;
+  padding: $site-footer-padding-top 0 ($site-footer-padding-top + $site-footer-border-size);
+  color: $white;
+  font-size: $site-footer-font-size;
+  letter-spacing: .06em;
+
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+
+    @include media($small-up) {
+      padding-right: $gutter;
+      padding-left: $gutter;
+    }
+  }
+
+  section {
+    text-align: center;
+
+    @include direction-context(right-to-left) {
+      &:first-child {
+        @include media($medium-up) {
+          @include span-columns(4);
+          margin-top: ($site-footer-ripcord-size - $site-footer-tallest-icon) / 2;
+          text-align: right;
+        }
+      }
+    }
+
+    &:last-child {
+      @include media($medium-up) {
+        @include span-columns(8);
+        text-align: left;
+      }
+    }
+  }
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    background: #970117;
+    width: 100%;
+    height: $site-footer-border-size;
+    content: '';
+  }
+
+  .icon-link {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+
+    + .icon-link {
+      margin-left: rem(30);
+    }
+
+    &:hover,
+    &:focus {
+      .icon {
+        fill: $white;
+      }
+    }
+  }
+
+  .icon {
+    width: rem(30);
+    height: rem(30);
+    fill: $site-footer-icon-color;
+  }
+
+  .icon-linkedin {
+    width: rem(30);
+    height: rem(24);
+  }
+
+  .icon-github {
+    width: rem(36);
+    height: rem(36);
+  }
+
+  a[href^=tel] {
+    color: inherit;
+  }
+
+  .ripcord {
+    display: inline-block;
+    width: $site-footer-ripcord-size;
+    height: $site-footer-ripcord-size;
+    vertical-align: middle;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $white;
+    }
+
+    &:hover,
+    &:focus {
+      svg {
+        fill: $impress-red-darker;
+      }
+    }
+  }
+
+}
+
+.site-footer-left {
+  display: block;
+  text-align: center;
+  font-weight: $font-weight-bold;
+
+  @include media($medium-up) {
+    display: inline;
+    text-align: left;
+    line-height: $site-footer-icon-link-height-largest;
+  }
+
+}
