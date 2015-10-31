@@ -105,6 +105,17 @@
     }
   }
 
+  .copyright {
+    a {
+      color: $white;
+
+      &:hover,
+      &:focus {
+        color: $impress-red-darker;
+      }
+    }
+  }
+
 }
 
 .site-footer-left {
