@@ -81,11 +81,11 @@
 <script>
   $(document).ready(function() {
     submitFormOnClick("#signup-submit", function(data){
-      console.log("SUCCESS");
-      alert("it worked, the plane boss, the plane");
+      // alert("it worked, the plane boss, the plane");
+      $("#register").hide(1000);
     }, function(data) {
-      console.log("FAIL");
-      alert("dun dun...");
+      console.log("there was a problem");
+      alert("There was a problem during signup.");
     });
   });
 </script>
