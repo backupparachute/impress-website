@@ -28,23 +28,15 @@
       <section>
         <div class="billboard-logo"><img src="images/impress-logo.png" alt="Impress Resume App" /></div>
         <h1 class="billboard-message">Simplified Career Managment</h1>
+        
+        <div id="register">
+          <form id="signup" name="signup">
+          	<input class="email" name="email" type="email" placeholder="Enter your email" />
+          	<input id="signup-submit" class="button ghost-impress" type="submit" value="Get Early Access" data-bucket="739c0bf3935ef3af5746d9ddb54202e98ab12f" data-canopy-domain="impress.paywithcanopy.com" />
+          </form>
+        </div>
+        
         <h3 class="billboard-cta">Follow us on Twitter for the latest updates and news about Impress</h3>
-              <form id="signup" name="signup">
-        	<input class="email" name="email" type="email" placeholder="email" />
-        	<input id="signup-submit" class="button ghost-impress" type="submit" value="Sign Up" data-bucket="739c0bf3935ef3af5746d9ddb54202e98ab12f" data-canopy-domain="impress.paywithcanopy.com" />
-        </form>
-
-<script>
-  $(document).ready(function() {
-    submitFormOnClick("#signup-submit", function(data){
-      console.log("SUCCESS");
-      alert("it worked, the plane boss, the plane");
-    }, function(data) {
-      console.log("FAIL");
-      alert("dun dun...");
-    });
-  });
-</script>
         <a class="billboard-social-link" href="http://www.twitter.com/impresscareer/"><svg class="icon icon-twitter"><use xlink:href="#twitter"></use></svg> @impresscareer</a>
       </section>
     </main>
@@ -65,6 +57,18 @@
 
 
     <script src="scripts/modernizr-flexboxtweener.js"></script>
+
+<script>
+  $(document).ready(function() {
+    submitFormOnClick("#signup-submit", function(data){
+      console.log("SUCCESS");
+      alert("it worked, the plane boss, the plane");
+    }, function(data) {
+      console.log("FAIL");
+      alert("dun dun...");
+    });
+  });
+</script>
 
      <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
