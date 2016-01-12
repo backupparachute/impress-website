@@ -36,10 +36,10 @@
 
 <script>
   $(document).ready(function() {
-    submitFormOnClick("#signup-submit", function(){
+    submitFormOnClick("#signup-submit", function(data){
       console.log("SUCCESS");
       alert("it worked, the plane boss, the plane");
-    }, function() {
+    }, function(data) {
       console.log("FAIL");
       alert("dun dun...");
     });
