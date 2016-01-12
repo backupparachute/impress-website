@@ -27,14 +27,14 @@
         color: #666;
       }
       #register input {
-        line-height:1em;
-        padding:2px;
+        line-height:2em;
+        padding:5px;
       }
       #register .button {
         background-color : transparent;
         border: 1px solid #e11d37;
         color: #e11d37;
-        padding:2px;
+        padding:5px;
       }
       #register .button:focus,
       #register .button:hover {
@@ -88,8 +88,8 @@
   $(document).ready(function() {
     submitFormOnClick("#signup-submit", function(data){
       // alert("it worked, the plane boss, the plane");
-      $("#signup").hide(1000);
-      $("#thanks").show(1000);
+      $("#signup").fadeOut();
+      $("#thanks").fadeIn();
     }, function(data) {
       console.log("there was a problem");
       alert("There was a problem during signup.");
