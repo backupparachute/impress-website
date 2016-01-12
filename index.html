@@ -32,7 +32,8 @@
         border: 1px solid #e11d37;
         color: #e11d37;
       }
-      #register .button:active {
+      #register .button:focus,
+      #register .button:hover {
         background-color : #e11d37;
         border: 1px solid #e11d37;
         color: #fff;
@@ -54,6 +55,7 @@
           	<input class="email" name="email" type="email" placeholder="Enter your email" />
           	<input id="signup-submit" class="button ghost-impress" type="submit" value="Get Early Access" data-bucket="739c0bf3935ef3af5746d9ddb54202e98ab12f" data-canopy-domain="impress.paywithcanopy.com" />
           </form>
+          <div id="thanks" style="display:none;">Thank you, we will contact you when your account is ready.</div>
         </div>
         
         <h3 class="billboard-cta">Follow us on Twitter for the latest updates and news about Impress</h3>
@@ -82,7 +84,8 @@
   $(document).ready(function() {
     submitFormOnClick("#signup-submit", function(data){
       // alert("it worked, the plane boss, the plane");
-      $("#register").hide(1000);
+      $("#signup").hide(1000);
+      $("#thanks").show(1000);
     }, function(data) {
       console.log("there was a problem");
       alert("There was a problem during signup.");
