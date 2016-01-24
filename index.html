@@ -88,7 +88,7 @@
   $(document).ready(function() {
     submitFormOnClick("#signup", function(data){
       // alert("it worked, the plane boss, the plane");
-      $("#signup").fadeOut();
+      $("#signup").hide();
       $("#thanks").fadeIn();
     }, function(data) {
       console.log("there was a problem");
