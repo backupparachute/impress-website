@@ -13,9 +13,8 @@
 
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://bps.paywithcanopy.com/canopy_js_lib.js"></script>
-
-
+    <script src="https://impress.paywithcanopy.com/canopy_js_lib.js"></script>
+    <script src="https://impress.paywithcanopy.com/javascript/v1/canopy.js"></script>
     <link rel="stylesheet" href="css/site.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,500,900' rel='stylesheet' type='text/css'>
     <style>
@@ -56,8 +55,8 @@
 
         <div id="register">
           <form id="signup" name="signup">
-          	<input class="email" name="email" type="email" placeholder="Enter your email" />
-          	<input id="signup-submit" class="button ghost-impress" type="submit" value="Get Early Access" data-bucket="739c0bf3935ef3af5746d9ddb54202e98ab12fc2" data-canopy-domain="impress.paywithcanopy.com" />
+          	<input class="email" name="email" type="email" placeholder="Enter your email" required="required"/>
+          	<input id="signup-submit" class="button ghost-impress" type="submit" value="Get Early Access"  />
           </form>
           <h3 class="billboard-cta" id="thanks" style="display:none;">Thank you, we will contact you when your account is ready.</h3>
         </div>
@@ -86,14 +85,15 @@
 
 <script>
   $(document).ready(function() {
-    submitFormOnClick("#signup-submit", function(data){
-      // alert("it worked, the plane boss, the plane");
-      $("#signup").fadeOut();
-      $("#thanks").fadeIn();
-    }, function(data) {
-      console.log("there was a problem");
-      alert("There was a problem during signup.");
-    });
+    var bucket = new Canopy.DataBucket("impress.paywithcanopy.com", "739c0bf3935ef3af5746d9ddb54202e98ab12fc2");
+		bucket.register($("#signup"),
+		  function() {
+				$("#signup").hide();
+        $("#thanks").fadeIn();
+    	}, function() {
+        console.log("there was a problem: "+data);
+        alert("There was a problem during signup.");
+    	});
   });
 </script>
 
