@@ -13,29 +13,33 @@
 
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://impress.paywithcanopy.com/canopy_js_lib.js"></script>
+    <script src="https://impress.paywithcanopy.com/javascript/v1/canopy.js"></script>
     <link rel="stylesheet" href="css/site.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,500,900' rel='stylesheet' type='text/css'>
     <style>
-      #survey {
-        margin-bottom: 1.5em;
+      #register {
+        margin-bottom: 1em;
       }
-      #survey .billboard-cta {
-        font-size: 1.5rem;
+      #register #signup {
+        font-size:16pt;
+        color: #666;
       }
-      #survey .button {
+      #register input {
         line-height:1.5em;
+        padding:5px;
+      }
+      #register .button {
+        background-color : transparent;
+        border: 1px solid #e11d37;
+        color: #e11d37;
+        padding:5px;
+      }
+      #register .button:focus,
+      #register .button:hover {
         background-color : #e11d37;
         border: 1px solid #e11d37;
         color: #fff;
-        padding:10px;
-        font-size: 2rem;
-        height: 100%;
-        width: 200px;
-        text-decoration: none;
-        border-radius: 8px;
-      }
-      #survey .button:hover {
-        background-color : #970117;
       }
     </style>
   </head>
@@ -49,9 +53,12 @@
         <div class="billboard-logo"><img src="images/impress-logo.png" alt="Impress Resume App" /></div>
         <h1 class="billboard-message">Simplified Career Management</h1>
 
-        <div id="survey">
-          <h3 class="billboard-cta">Take our survey and be entered to win a $100 Amazon Gift Card!</h3>
-          <a href="http://bit.ly/impress-survey" class="button survey-impress">Enter Here</a>
+        <div id="register">
+          <form id="signup" name="signup">
+          	<input class="email" name="email" type="email" placeholder="Enter your email" required="required"/>
+          	<input id="signup-submit" class="button ghost-impress" type="submit" value="Get Early Access"  />
+          </form>
+          <h3 class="billboard-cta" id="thanks" style="display:none;">Thank you, we will contact you when your account is ready.</h3>
         </div>
 
         <h3 class="billboard-cta">Follow us on Twitter for the latest updates and news about Impress</h3>
@@ -75,6 +82,20 @@
 
 
     <script src="scripts/modernizr-flexboxtweener.js"></script>
+
+<script>
+  $(document).ready(function() {
+    var bucket = new Canopy.DataBucket("impress.paywithcanopy.com", "739c0bf3935ef3af5746d9ddb54202e98ab12fc2");
+		bucket.register($("#signup"),
+		  function() {
+				$("#signup").hide();
+        $("#thanks").fadeIn();
+    	}, function() {
+        console.log("there was a problem: "+data);
+        alert("There was a problem during signup.");
+    	});
+  });
+</script>
 
      <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
