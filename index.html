@@ -13,29 +13,33 @@
 
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://impress.paywithcanopy.com/canopy_js_lib.js"></script>
+    <script src="https://impress.paywithcanopy.com/javascript/v1/canopy.js"></script>
     <link rel="stylesheet" href="css/site.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,500,900' rel='stylesheet' type='text/css'>
     <style>
-      #survey {
-        margin-bottom: 1.5em;
+      #register {
+        margin-bottom: 1em;
       }
-      #survey .billboard-cta {
-        font-size: 1.5rem;
+      #register #signup {
+        font-size:16pt;
+        color: #666;
       }
-      #survey .button {
+      #register input {
         line-height:1.5em;
+        padding:5px;
+      }
+      #register .button {
+        background-color : transparent;
+        border: 1px solid #e11d37;
+        color: #e11d37;
+        padding:5px;
+      }
+      #register .button:focus,
+      #register .button:hover {
         background-color : #e11d37;
         border: 1px solid #e11d37;
         color: #fff;
-        padding:10px;
-        font-size: 2rem;
-        height: 100%;
-        width: 200px;
-        text-decoration: none;
-        border-radius: 8px;
-      }
-      #survey .button:hover {
-        background-color : #970117;
       }
     </style>
   </head>
@@ -49,9 +53,12 @@
         <div class="billboard-logo"><img src="images/impress-logo.png" alt="Impress Resume App" /></div>
         <h1 class="billboard-message">Simplified Career Management</h1>
 
-        <div id="survey">
-          <h3 class="billboard-cta">Take our survey and be entered to win a $100 Amazon Gift Card!</h3>
-          <a href="http://bit.ly/impress-survey" class="button survey-impress">Enter Here</a>
+        <div id="register">
+          <form id="signup" action="https://formspree.io/signup@impresscareer.com" name="signup" method="POST">
+          	<input class="email" name="email" type="email" placeholder="Enter your email" required="required"/>
+          	<input id="signup-submit" class="button ghost-impress" type="submit" value="Get Early Access"  />
+          </form>
+          <h3 class="billboard-cta" id="thanks" style="display:none;">Thank you, we will contact you when your account is ready.</h3>
         </div>
 
         <h3 class="billboard-cta">Follow us on Twitter for the latest updates and news about Impress</h3>
@@ -63,11 +70,7 @@
       <div class="container">
         <section>
           <a class="icon-link" href="https://twitter.com/impresscareer" target="_blank"><svg class="icon icon-twitter"><use xlink:href="#twitter"></use></svg></a>
-          <a class="icon-link" href="https://www.linkedin.com/company/backup-parachute-software" target="_blank"><svg class="icon icon-linkedin"><use xlink:href="#linkedin"></use></svg></a>
-          <a class="icon-link" href="https://github.com/backupparachute/" target="_blank"><svg class="icon icon-github"><use xlink:href="#github"></use></svg></a>
-        </section>
-        <section class="site-footer-left">
-          <a href="http://www.backupparachute.com/" class="ripcord"><svg><use xlink:href="#ripcord"></use></svg></a> <span class="copyright">&copy;2014-2015 <a href="http://www.backupparachute.com/">Backup Parachute Software LLC</a></span>
+          <a class="icon-link" href="https://www.linkedin.com/company/impress-software-llc" target="_blank"><svg class="icon icon-linkedin"><use xlink:href="#linkedin"></use></svg></a>
         </section>
       </div>
     </footer>
@@ -76,13 +79,15 @@
 
     <script src="scripts/modernizr-flexboxtweener.js"></script>
 
-     <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-49943523-1');ga('send','pageview');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-80195393-1', 'auto');
+      ga('send', 'pageview');
+
     </script>
   </body>
 </html>
