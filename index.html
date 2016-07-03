@@ -10,8 +10,6 @@
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="css/site.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,500,900' rel='stylesheet' type='text/css'>
@@ -52,7 +50,7 @@
         <h1 class="billboard-message">Simplified Career Management</h1>
 
         <div id="register">
-          <form id="signup" action="https://formspree.io/signup@impresscareer.com" name="signup" method="POST">
+          <form id="signup" name="signup">
           	<input class="email" name="email" type="email" placeholder="Enter your email" required="required"/>
           	<input id="signup-submit" class="button ghost-impress" type="submit" value="Get Early Access"  />
           </form>
@@ -76,6 +74,26 @@
 
 
     <script src="scripts/modernizr-flexboxtweener.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $("#signup").submit(function(e) {
+          $.ajax({
+            url: "https://formspree.io/signup@impresscareer.com",
+            method: "POST",
+            data: { email: $(".email").val() },
+            dataType: "json",
+            success: function() {
+              $("#signup").hide();
+              $("#thanks").fadeIn();
+            },
+            failure: function() {
+             console.log("there was a problem: "+data);
+             alert("There was a problem during signup.");
+           }
+          });
+        });
+      });
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
