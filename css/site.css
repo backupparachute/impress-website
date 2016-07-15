@@ -430,8 +430,6 @@ main {
   -moz-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  background: transparent url("../images/background.jpg") no-repeat center top;
-  background-size: cover;
   padding-top: 3.75rem; }
 
 .container {
